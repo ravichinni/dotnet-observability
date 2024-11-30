@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     networks:
       - monitoring
-  prometheus:
+  prom.sample.monitor:
     build:
       context: ./prom.sample.monitor
       dockerfile: Dockerfile
