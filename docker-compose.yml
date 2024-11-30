@@ -13,6 +13,9 @@ services:
     networks:
       - monitoring
   prom.sample.visualizer:
+    build:
+      context: ./prom.sample.visualizer
+      dockerfile: Dockerfile
     depends_on:
       - prom.sample.monitor
     networks:
