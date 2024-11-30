@@ -2,5 +2,16 @@ services:
   prom.sample.web:
     image: ${DOCKER_REGISTRY-}promsampleweb
     build:
-      context: .
-      dockerfile: prom.sample.web/Dockerfile
+      context: ./prom.sample.web
+      dockerfile: Dockerfile
+    networks:
+      - monitoring
+  prometheus:
+    build:
+      context: ./prom.sample.monitor
+      dockerfile: Dockerfile
+    networks:
+      - monitoring
+networks:
+  monitoring:
+    driver: bridge
