@@ -12,6 +12,11 @@ services:
       dockerfile: Dockerfile
     networks:
       - monitoring
+  prom.sample.visualizer:
+    depends_on:
+      - prom.sample.monitor
+    networks:
+      - monitoring
 networks:
   monitoring:
     driver: bridge

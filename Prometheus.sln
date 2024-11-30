@@ -8,9 +8,16 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{78E42283-56A3-4AE6-890F-5D41601D0053}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA057BAA-3726-481D-8DC1-3779CA2D8036}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prom.sample.monitor", "prom.sample.monitor", "{D1BFEC08-3F77-4F89-8D07-7216CFB06967}"
 	ProjectSection(SolutionItems) = preProject
 		prom.sample.monitor\Dockerfile = prom.sample.monitor\Dockerfile
 		prom.sample.monitor\prometheus-config.yml = prom.sample.monitor\prometheus-config.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prom.sample.visualizer", "prom.sample.visualizer", "{EF5CFE0D-B2F6-4462-90B2-AE6C0076C722}"
+	ProjectSection(SolutionItems) = preProject
+		prom.sample.visualizer\Dockerfile = prom.sample.visualizer\Dockerfile
 	EndProjectSection
 EndProject
 Global

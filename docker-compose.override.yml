@@ -13,3 +13,8 @@ services:
   prom.sample.monitor:
     ports:
     - "9090:9090"
+  prom.sample.visualizer:
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana:/var/lib/grafana  # Optional: Persist data
