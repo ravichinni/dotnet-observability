@@ -1,0 +1,6 @@
+services:
+  prom.sample.web:
+    image: ${DOCKER_REGISTRY-}promsampleweb
+    build:
+      context: .
+      dockerfile: prom.sample.web/Dockerfile
