@@ -1,31 +1,31 @@
 services:
-  prom.sample.web:
+  observability.web:
     image: ${DOCKER_REGISTRY-}promsampleweb
     build:
-      context: ./prom.sample.web
+      context: ./observability.web
       dockerfile: Dockerfile
     networks:
       - monitoring
-  prom.sample.monitor:
+  observability.prometheus:
     build:
-      context: ./prom.sample.monitor
+      context: ./observability.prometheus
       dockerfile: Dockerfile
     networks:
       - monitoring
-  prom.sample.visualizer:
+  observability.grafana:
     build:
-      context: ./prom.sample.visualizer
+      context: ./observability.grafana
       dockerfile: Dockerfile
     depends_on:
-      - prom.sample.monitor
+      - observability.prometheus
     networks:
       - monitoring
-  observability.sample.traces:
+  observability.jaeger:
     build:
-        context: ./observability.sample.traces
+        context: ./observability.jaeger
         dockerfile: Dockerfile
     depends_on:
-        - prom.sample.monitor
+        - observability.prometheus
     networks:
         - monitoring
 networks:

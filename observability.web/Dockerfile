@@ -12,19 +12,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["prom.sample.web/prom.sample.web.csproj", "prom.sample.web/"]
-RUN dotnet restore "./prom.sample.web/prom.sample.web.csproj"
+COPY ["observability.web/observability.web.csproj", "observability.web/"]
+RUN dotnet restore "./observability.web/observability.web.csproj"
 COPY . .
-WORKDIR "/src/prom.sample.web"
-RUN dotnet build "./prom.sample.web.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/observability.web"
+RUN dotnet build "./observability.web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./prom.sample.web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./observability.web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "prom.sample.web.dll"]
+ENTRYPOINT ["dotnet", "observability.web.dll"]

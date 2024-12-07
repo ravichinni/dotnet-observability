@@ -7,7 +7,7 @@
     <ProjectGuid>78e42283-56a3-4ae6-890f-5d41601d0053</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>prom.sample.web</DockerServiceName>
+    <DockerServiceName>observability.web</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

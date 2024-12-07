@@ -3,27 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prom.sample.web", "prom.sample.web\prom.sample.web.csproj", "{EE29836B-5BEE-4593-8A7A-48366A064DC2}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{78E42283-56A3-4AE6-890F-5D41601D0053}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA057BAA-3726-481D-8DC1-3779CA2D8036}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prom.sample.monitor", "prom.sample.monitor", "{D1BFEC08-3F77-4F89-8D07-7216CFB06967}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "observability.prometheus", "observability.prometheus", "{D1BFEC08-3F77-4F89-8D07-7216CFB06967}"
 	ProjectSection(SolutionItems) = preProject
-		prom.sample.monitor\Dockerfile = prom.sample.monitor\Dockerfile
-		prom.sample.monitor\prometheus-config.yml = prom.sample.monitor\prometheus-config.yml
+		observability.prometheus\Dockerfile = observability.prometheus\Dockerfile
+		observability.prometheus\prometheus-config.yml = observability.prometheus\prometheus-config.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prom.sample.visualizer", "prom.sample.visualizer", "{EF5CFE0D-B2F6-4462-90B2-AE6C0076C722}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "observability.grafana", "observability.grafana", "{EF5CFE0D-B2F6-4462-90B2-AE6C0076C722}"
 	ProjectSection(SolutionItems) = preProject
-		prom.sample.visualizer\Dockerfile = prom.sample.visualizer\Dockerfile
+		observability.grafana\Dockerfile = observability.grafana\Dockerfile
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "observability.sample.traces", "observability.sample.traces", "{51F7B4D3-A7FB-42FF-BFFF-4D9C7E8C3AE9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "observability.jaeger", "observability.jaeger", "{51F7B4D3-A7FB-42FF-BFFF-4D9C7E8C3AE9}"
 	ProjectSection(SolutionItems) = preProject
-		observability.sample.traces\Dockerfile = observability.sample.traces\Dockerfile
+		observability.jaeger\Dockerfile = observability.jaeger\Dockerfile
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "observability.web", "observability.web\observability.web.csproj", "{9AF7E881-05FA-4E76-90AA-86833B27020D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EE29836B-5BEE-4593-8A7A-48366A064DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE29836B-5BEE-4593-8A7A-48366A064DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE29836B-5BEE-4593-8A7A-48366A064DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE29836B-5BEE-4593-8A7A-48366A064DC2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78E42283-56A3-4AE6-890F-5D41601D0053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78E42283-56A3-4AE6-890F-5D41601D0053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E42283-56A3-4AE6-890F-5D41601D0053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E42283-56A3-4AE6-890F-5D41601D0053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF7E881-05FA-4E76-90AA-86833B27020D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF7E881-05FA-4E76-90AA-86833B27020D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF7E881-05FA-4E76-90AA-86833B27020D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF7E881-05FA-4E76-90AA-86833B27020D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

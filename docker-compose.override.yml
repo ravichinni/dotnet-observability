@@ -1,5 +1,5 @@
 services:
-  prom.sample.web:
+  observability.web:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
@@ -10,15 +10,15 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
-  prom.sample.monitor:
+  observability.prometheus:
     ports:
     - "9090:9090"
-  prom.sample.visualizer:
+  observability.grafana:
     ports:
       - "3000:3000"
     volumes:
-      - ./grafana:/var/lib/grafana  # Optional: Persist data
-  observability.sample.traces:
+      - ./grafana-volume:/var/lib/grafana  # Optional: Persist data
+  observability.jaeger:
     ports:
       - "16686:16686"   # Jaeger UI  
       - "4317:4317"     # OTLP gRPC
