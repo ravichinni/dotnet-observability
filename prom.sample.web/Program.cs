@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Options;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -41,13 +42,16 @@ otel.WithTracing(tracing =>
     {
         tracing.AddOtlpExporter(otlpOptions =>
          {
-             otlpOptions.Endpoint = new Uri(tracingOtlpEndpoint);
+             // http://localhost:4317 is Default OTLP endpoint for Jaeger gRPC Collector
+             otlpOptions.Endpoint = new Uri(tracingOtlpEndpoint); 
          });
     }
     else
     {
         tracing.AddConsoleExporter();
     }
+
+    tracing.AddConsoleExporter();
 });
 
 var app = builder.Build();

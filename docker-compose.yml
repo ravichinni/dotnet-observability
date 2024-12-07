@@ -20,6 +20,14 @@ services:
       - prom.sample.monitor
     networks:
       - monitoring
+  observability.sample.traces:
+    build:
+        context: ./observability.sample.traces
+        dockerfile: Dockerfile
+    depends_on:
+        - prom.sample.monitor
+    networks:
+        - monitoring
 networks:
   monitoring:
     driver: bridge

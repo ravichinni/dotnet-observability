@@ -20,6 +20,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prom.sample.visualizer", "p
 		prom.sample.visualizer\Dockerfile = prom.sample.visualizer\Dockerfile
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "observability.sample.traces", "observability.sample.traces", "{51F7B4D3-A7FB-42FF-BFFF-4D9C7E8C3AE9}"
+	ProjectSection(SolutionItems) = preProject
+		observability.sample.traces\Dockerfile = observability.sample.traces\Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
