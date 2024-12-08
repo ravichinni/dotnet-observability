@@ -24,3 +24,6 @@
 ![Jaeger Traces](./docs/images/observability.jaeger.png)
 
 # Backlog
+- The trace is made up of only one span, so not a good representation of Distributed Tracing. So possibly add Messaging, Service, DB. See more at [Distributed Tracing](https://opentelemetry.io/docs/concepts/observability-primer/#distributed-traces)
+- Tests, possibly to simulate errors and see it getting captured
+- Grafana configuration is manual, to Register, create a connection and create a dashboard. Explore if this can be setup as configuration
