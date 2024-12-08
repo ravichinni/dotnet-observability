@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["observability.web/observability.web.csproj", "observability.web/"]
+COPY ["./", "observability.web/"]
 RUN dotnet restore "./observability.web/observability.web.csproj"
 COPY . .
 WORKDIR "/src/observability.web"

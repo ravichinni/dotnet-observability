@@ -1,6 +1,6 @@
 services:
   observability.web:
-    image: ${DOCKER_REGISTRY-}promsampleweb
+    image: ${DOCKER_REGISTRY-}observability.web
     build:
       context: ./observability.web
       dockerfile: Dockerfile
